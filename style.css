@@ -32,6 +32,7 @@
   
 text-align: center;
 }
+
 .correct{
     color: white;
     background-color: blueviolet;
@@ -57,5 +58,9 @@ font-size: 1.8rem;
 @media only screen and (max-width:890px){
     #box{
         width: 98%;
+    }
+    #QusBox{
+        font-size: 1.2rem;
+        font-weight: 600;
     }
 }
