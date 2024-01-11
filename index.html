@@ -8,29 +8,29 @@
 </head>
 <body>
     <div class="main">
-        <div class="box">
+        <div id="box">
             <h1 id="QusBox">qus 1 : how old are you ?</h1>
             <div class="row">
-                <input  class="options" type="radio" name="option1" value="a">
+                <input  id="option1" class="options" type="radio" name="option" value="a">
                 <label for="option1">(a)Option 1</label>
                 
             </div>
             <div class="row">
-                <input class="options" type="radio" name="option2" value="b">
+                <input id="option2" class="options" type="radio" name="option" value="b">
                 <label   for="option2">(b)Option 2</label>
              
             </div>
             <div class="row">
-                <input class="options" type="radio" name="option3" value="c">
+                <input id="option3" class="options" type="radio" name="option" value="c">
                 <label   for="option3">(c)Option 3</label>
                
             </div>
             <div class="row">
-                <input  class="options" type="radio" name="option4" value="d">
+                <input id="option4" class="options" type="radio" name="option" value="d">
                 <label  for="option4">(d)Option 4</label>
                
             </div>
-            <button class="btn">Submit</button>
+            <button class="btn" onclick="submitQuiz()">Submit</button>
         </div>
     </div>
     <script src="script.js"></script>

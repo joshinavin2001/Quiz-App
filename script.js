@@ -25,14 +25,60 @@ const qustions = [
   },
 ];
 let index = 0;
-const questionbox = document.getElementById("QusBox");
-const qusInput = document.querySelectorAll(".options");
+let total=qustions.length;
+let right=0,wrong=0;
+let qusBox = document.getElementById("QusBox");
+let opts=document.querySelectorAll(".options")
 const LoadQustion = () => {
-  const data = qustions[index];
-  questionbox.innerText = `${index + 1}) ${data.Qus}`;
-  qusInput[0].nextElementSibling.innerText = data.a;
-  qusInput[1].nextElementSibling.innerText = data.b;
-  qusInput[2].nextElementSibling.innerText = data.c;
-  qusInput[3].nextElementSibling.innerText = data.d;
+  if(index===total){
+    return endQuiz();
+}
+  let data = qustions[index];
+  qusBox.innerText = `${index+1})${data.Qus}`;
+  opts[0].nextElementSibling.innerHTML=data.a
+  opts[1].nextElementSibling.innerHTML=data.b
+  opts[2].nextElementSibling.innerHTML=data.c
+  opts[3].nextElementSibling.innerHTML=data.d
 };
+//this is intial call//
 LoadQustion();
+
+
+//submit logic //
+const submitQuiz=()=>{
+  let data = qustions[index];
+  const ans = getans()
+  if(ans===data.correct){
+    right++;
+  }else{
+    wrong++;
+  }
+  index++;
+  LoadQustion()
+  reset()
+ 
+  return;
+}
+const getans=()=>{
+  let answr;
+  opts.forEach((input)=>{
+     if(input.checked){
+      answr= input.value
+     }
+  })
+  return answr;
+}
+//reset//
+const reset=()=>{
+  opts.forEach((input)=>{
+       input.checked=false;
+  })
+}
+//end quiz//
+const endQuiz =()=>{
+   document.getElementById("box").innerHTML=`<h1 class="end">ThankYou The Quiz Game Is End</h1>
+   <h2 class="correct">${
+    right
+   }/${total} Are Correct </h2>`
+   
+}
