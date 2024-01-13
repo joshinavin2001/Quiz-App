@@ -8,6 +8,7 @@
     height: 100vh;
     background-color: aqua;
     display: flex;
+    flex-direction: column;
     justify-content:center ;
     align-items: center;
 }
@@ -54,6 +55,28 @@ font-size: 1.8rem;
   cursor: pointer;
   border-radius: 5px;
  
+}
+.rightwrong{
+    /* position: relative; */
+
+   margin-bottom: 10px;
+    /* position: absolute;
+    top: 70px;
+    left: 280px; */
+    display: none;
+}
+.daba{
+    width: 140px;
+    height: 60px;
+    background-color: rgb(21, 254, 52);
+    border-radius: 8px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+  
 }
 @media only screen and (max-width:890px){
     #box{

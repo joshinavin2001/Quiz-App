@@ -31,7 +31,12 @@ let qusBox = document.getElementById("QusBox");
 let opts=document.querySelectorAll(".options")
 const LoadQustion = () => {
   if(index===total){
-    return endQuiz();
+    endQuiz();
+    rightwrong.style.display="block"
+    setTimeout(function(){
+      rightwrong.style.display="none"
+    },2000)
+    
 }
   let data = qustions[index];
   qusBox.innerText = `${index+1})${data.Qus}`;
@@ -50,12 +55,17 @@ const submitQuiz=()=>{
   const ans = getans()
   if(ans===data.correct){
     right++;
+    daba.innerHTML=`<h1>Correct</h1>`
   }else{
     wrong++;
+    daba.innerHTML=`<h1>Wrong</h1>`
   }
   index++;
   LoadQustion()
   reset()
+  istrue()
+  boxreset()
+
  
   return;
 }
@@ -76,9 +86,28 @@ const reset=()=>{
 }
 //end quiz//
 const endQuiz =()=>{
-   document.getElementById("box").innerHTML=`<h1 class="end">ThankYou The Quiz Game Is End</h1>
-   <h2 class="correct">${
-    right
-   }/${total} Are Correct </h2>`
-   
+  setTimeout(function(){
+    document.getElementById("box").innerHTML=`<h1 class="end">ThankYou The Quiz Game Is End</h1>
+    <h2 class="correct">${
+     right
+    }/${total} Are Correct </h2>`
+    
+  },2000)
+  
+}
+
+
+let rightwrong = document.querySelector(".rightwrong");
+let daba = document.querySelector(".daba");
+const istrue=()=>{
+  rightwrong.style.display="block"
+
+}
+const boxreset=()=>{
+  setTimeout(function(){
+    
+    rightwrong.style.display="none"
+    
+  },1000)
+
 }
